@@ -1,0 +1,7 @@
+**/bin
+**/logs
+json.cpp
+json.h
+soap*
+stdsoap2*
+xml-rpc*

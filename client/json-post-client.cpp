@@ -27,7 +27,6 @@ int main(int argc, char **argv)
     if (json_call(ctx, argv[1], &request, &response)) {
       //soap_stream_fault(ctx, soap_error);
       printf("\nERROR(%ld):%s...",ctx->error, ctx->fault->faultstring);
-      printf("\nERROR2(%s):%s...",soap_faultcode(ctx), soap_faultstring(ctx));
     } else {
       std::cout << "." << response << "." << response.size() << "." << std::endl;
       std::stringstream str_json;

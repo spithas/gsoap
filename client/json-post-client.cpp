@@ -34,9 +34,7 @@ int main(int argc, char **argv)
       printf("\n1:%s.",str_json.str().c_str());
     }
 
-    
     std::cout << "\n\nDone...\n";
-
 
     soap_destroy(ctx); // delete managed objects
     soap_end(ctx);     // delete managed data

@@ -5,3 +5,4 @@ json.h
 soap*
 stdsoap2*
 xml-rpc*
+**/*xml

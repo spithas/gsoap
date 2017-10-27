@@ -1,8 +1,15 @@
+# general
 **/bin
 **/logs
-json.cpp
-json.h
+**/*xml
 soap*
 stdsoap2*
+
+# rest
+json.cpp
+json.h
 xml-rpc*
-**/*xml
+
+# soap
+service.h
+service.nsmap

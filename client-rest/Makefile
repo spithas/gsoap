@@ -17,11 +17,11 @@ copyfiles:
 stubs:
 		$(GSOAP_DIR)/gsoap/src/soapcpp2 -CSL xml-rpc.h
 
-client:	json-post-client.cpp
-		c++ -DWITH_OPENSSL -DWITH_GZIP -o ../bin/json-post-client json-post-client.cpp xml-rpc.cpp json.cpp stdsoap2.cpp soapC.cpp -lcrypto -lssl -lz
+client:	client-json-post.cpp
+		c++ -DWITH_OPENSSL -DWITH_GZIP -o ../bin/client-json-post client-json-post.cpp xml-rpc.cpp json.cpp stdsoap2.cpp soapC.cpp -lcrypto -lssl -lz
 
 clean:
-		-rm -rf *.o soapC.cpp soapH.h soapStub.h soap.nsmap ../bin/json-post-client
+		-rm -rf *.o soapC.cpp soapH.h soapStub.h soap.nsmap ../bin/client-json-post
 
 .c.o:
 			$(CC) $(CFLAG) -c $*.c

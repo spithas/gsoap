@@ -1,2 +1,5 @@
 # gsoap
-gsoap examples
+
+examples:
+- rest client example
+- soap client example

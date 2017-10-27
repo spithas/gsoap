@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="service"
+  targetNamespace="http://websrv.cs.fsu.edu/~engelen/service.wsdl"
+  xmlns:tns="http://websrv.cs.fsu.edu/~engelen/service.wsdl"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:service"
+  xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+  xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+  xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+  xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+  <schema targetNamespace="urn:service"
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns="urn:service"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="unqualified"
+    attributeFormDefault="unqualified">
+    <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </schema>
+
+</types>
+
+<message name="request">
+  <part name="in_str" type="xsd:string"/><!-- ns__toUpper::in_str -->
+</message>
+
+<message name="response">
+  <part name="result" type="xsd:string"/><!-- ns__toUpper::result -->
+</message>
+
+<portType name="servicePortType">
+  <operation name="toUpper">
+    <documentation>
+      Simple request.
+    </documentation>
+    <input message="tns:request"/>
+    <output message="tns:response"/>
+  </operation>
+</portType>
+
+<binding name="service" type="tns:servicePortType">
+  <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="toUpper">
+    <SOAP:operation style="rpc" soapAction=""/>
+    <input>
+          <SOAP:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:service"/>
+    </input>
+    <output>
+          <SOAP:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:service"/>
+    </output>
+  </operation>
+</binding>
+
+<service name="service">
+  <documentation>
+    Simple soap service
+  </documentation>
+  <port name="service" binding="tns:service">
+    <SOAP:address location="http://10.240.29.75:50001/server"/>
+  </port>
+</service>
+
+</definitions>

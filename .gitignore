@@ -2,6 +2,7 @@
 **/bin
 **/logs
 **/*xml
+**/csrd-server
 **/WSDL
 soap*
 stdsoap2*
@@ -14,4 +15,3 @@ xml-rpc*
 # soap
 service.h
 service.nsmap
-*ReferenceDataSubscriptionReceiverCBS*

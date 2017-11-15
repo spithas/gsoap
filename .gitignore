@@ -3,10 +3,12 @@
 **/logs
 **/*xml
 **/csrd-server
+**/csrd2-server
+**/server-soap
 **/WSDL
 soap*
 stdsoap2*
-
+**/.vscode
 # rest
 json.cpp
 json.h

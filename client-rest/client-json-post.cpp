@@ -41,9 +41,9 @@ int main(int argc, char **argv)
     }
     else
     {
-      std::cout << "." << response << "." << response.size() << "." << std::endl;
+      std::cout << "." << response << "." << response->soap->size() << "." << std::endl;
       std::stringstream str_json;
-      str_json << response;
+      str_json << response->soap->os;
       printf("\n1:%s.", str_json.str().c_str());
     }
 

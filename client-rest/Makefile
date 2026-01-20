@@ -1,6 +1,6 @@
 ## Makefile ##
 
-GSOAP_DIR = /projects/ecn/gsoap-2.8.54
+GSOAP_DIR = /projects/gsoap-2.8.54
 
 all:	rest
 

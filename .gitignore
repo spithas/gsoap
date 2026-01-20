@@ -2,8 +2,6 @@
 **/bin
 **/logs
 **/*xml
-**/csrd-server
-**/csrd2-server
 **/server-soap
 **/WSDL
 soap*
